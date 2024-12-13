@@ -33,11 +33,6 @@ function updateToggleIcon() {
     }
 }
 
-// Improved random function with better distribution
-function getRandom(min, max) {
-    return min + (Math.random() * (max - min));
-}
-
 // Handle theme toggle with subtle transitions
 function toggleTheme() {
     const newTheme = darkModeToggle.checked ? 'dark' : 'light';
@@ -202,10 +197,8 @@ document.querySelectorAll('.project-card').forEach(card => {
     });
 });
 
-// Move navLinks declaration outside the DOMContentLoaded event
 const navLinks = document.querySelector('.nav-links');
 
-// Wrap hamburger menu initialization in DOMContentLoaded
 document.addEventListener('DOMContentLoaded', () => {
     // Hamburger Menu Functionality
     const hamburger = document.querySelector('.hamburger');
@@ -494,7 +487,6 @@ function filterGrades() {
 
         if (yearMatch && subjectMatch) {
             card.classList.remove('hidden');
-            // Add fade-in animation
             card.style.opacity = '0';
             requestAnimationFrame(() => {
                 card.style.transition = 'opacity 0.3s ease';
